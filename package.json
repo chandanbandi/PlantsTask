@@ -4,10 +4,17 @@
   "description": "-A coding task for show casing list of plants from San Francisco Plant Finder API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
+       "engines": {
+    "node": "10.16.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "express": "^4.17.1"
   }
