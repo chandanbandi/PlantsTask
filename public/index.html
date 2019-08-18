@@ -20,37 +20,12 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Plant Finder Dashboard</a>
     </nav>
-    <div class="container-fluid mt-3">
-        
+    <div class="container mt-3">
         <div class="row">
-          <div class="col-sm-9">
-            <div id="PlantGrid">
-                <table id="PlantTable" class="display responsive">
-                <thead>
-                    <tr>
-                        <td>Common Name</td>
-                        <td>Bloom Time</td>
-                        <td>Size At Maturity</td>
-                        <td>Water Needs</td>
-                        <td>Plant Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-                </table>
-            </div>
-            <div id="FilterGrid">                
-            </div>
-             
-            <div id="details" class="card mt-3">
-            </div>
-          </div>
-          <div class="col-sm-3">
+            <div class="col-sm-12">
                 <h4>Filter Plants By:</h3>
-                <div class="row mb-3">
-                  <div class="col-sm-12">
-                    <div class="card">
+                <div class="card-group mb-3">
+                    <div class="card text-white bg-dark">
                       <div class="card-body">
                         <h5 class="card-title">Bloom Time</h5>
                         <label><input type="checkbox" id="bloom1" name="bloomTime1" value="Winter"> Winter</label><br>
@@ -59,9 +34,7 @@
                         <label><input type="checkbox" id="bloom4" name="bloomTime4" value="Fall"> Fall</label><br> 
                       </div>
                     </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="card">
+                    <div class="card bg-light">
                       <div class="card-body">
                         <h5 class="card-title">Size At Maturity</h5>
                         <label><input type="checkbox" id="size1" name="sizeAtMaturity1" value="&lt; 1 ft"> &lt; 1 ft.</label><br>
@@ -71,9 +44,7 @@
                         <label><input type="checkbox" id="size5" name="sizeAtMaturity5" value="13-24 ft"> 13-24 ft.</label><br>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="card">
+                    <div class="card text-white bg-dark">
                       <div class="card-body">
                         <h5 class="card-title">Water Needs</h5>
                         <label><input type="checkbox" id="watering1" name="wateringNeeds" value="None"> None</label><br>
@@ -81,9 +52,7 @@
                         <label><input type="checkbox" id="watering3" name="wateringNeeds" value="Moderate"> Moderate</label><br>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="card">
+                    <div class="card bg-light">
                       <div class="card-body">
                         <h5 class="card-title">Plant Type</h5>
                         <label><input type="checkbox" id="type1" name="plantType" value="Annual"> Annual</label><br>
@@ -97,12 +66,35 @@
                         <label><input type="checkbox" id="type9" name="plantType" value="Fern"> Fern</label><br>
                         <label><input type="checkbox" id="type10" name="plantType" value="Succulent"> Succulent</label><br>
                       </div>
-                    </div>
                   </div>
-                
                 </div>
-                <button id="filter" type="button" class="btn btn-primary">Filter</button>
-                <button id="clear" type="button" class="btn btn-secondary">Clear</button>
+                <div class="mb-3">
+                    <button id="filter" type="button" class="btn btn-primary">Filter</button>
+                    <button id="clear" type="button" class="btn btn-secondary">Clear</button>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div id="PlantGrid">
+                    <table id="PlantTable" class="display responsive">
+                    <thead>
+                        <tr>
+                            <td>Common Name</td>
+                            <td>Bloom Time</td>
+                            <td>Size At Maturity</td>
+                            <td>Water Needs</td>
+                            <td>Plant Type</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    </table>
+                </div>
+                <div id="FilterGrid">                
+                </div>
+
+                <div id="details" class="card mt-3">
+                </div>
             </div>
         </div>
     </div>

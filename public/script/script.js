@@ -60,7 +60,7 @@ $(function(){
     $("#filter").on("click", function(e){
         var finalQuery = "";
         $("#details").html("");
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
         
         //Fetching the BloomTime checbox selections and creating a query string
         var Bloomtime = "";
@@ -289,7 +289,7 @@ $(function(){
  
      /************* This function is triggered on clicking "Clear" button and it clears the filter selection *************/
     $("#clear").on("click", function(){
-        $("html, body").animate({ scrollTop: 0 }, "slow", function(){
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow", function(){
             window.location.reload(); 
         });
         
