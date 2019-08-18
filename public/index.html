@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="ico" href="favicon.ico">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+    
+
+    <title>Plants Dashboard</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Plants Dashboard</a>
+    </nav>
+    <div class="container-fluid mt-3">
+        
+        <div class="row">
+          <div class="col-sm-9">
+            <div id="PlantGrid">
+                <table id="PlantTable" class="display responsive">
+                <thead>
+                    <tr>
+                        <td>Common Name</td>
+                        <td>Bloom Time</td>
+                        <td>Size At Maturity</td>
+                        <td>Water Needs</td>
+                        <td>Plant Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+                </table>
+            </div>
+            <div id="FilterGrid">                
+            </div>
+             
+            <div id="details" class="card mt-3">
+            </div>
+          </div>
+          <div class="col-sm-3">
+                <h4>Filter Plants By:</h3>
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Bloom Time</h5>
+                        <label><input type="checkbox" id="bloom1" name="bloomTime1" value="Winter"> Winter</label><br>
+                        <label><input type="checkbox" id="bloom2" name="bloomTime2" value="Spring"> Spring</label><br> 
+                        <label><input type="checkbox" id="bloom3" name="bloomTime3" value="Summer"> Summer</label><br> 
+                        <label><input type="checkbox" id="bloom4" name="bloomTime4" value="Fall"> Fall</label><br> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Size At Maturity</h5>
+                        <label><input type="checkbox" id="size1" name="sizeAtMaturity1" value="&lt; 1 ft"> &lt; 1 ft.</label><br>
+                        <label><input type="checkbox" id="size2" name="sizeAtMaturity2" value="1-3 ft"> 1-3 ft.</label><br> 
+                        <label><input type="checkbox" id="size3" name="sizeAtMaturity3" value="4-6 ft"> 4-6 ft.</label><br> 
+                        <label><input type="checkbox" id="size4" name="sizeAtMaturity4" value="7-12 ft"> 7-12 ft.</label><br>
+                        <label><input type="checkbox" id="size5" name="sizeAtMaturity5" value="13-24 ft"> 13-24 ft.</label><br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Water Needs</h5>
+                        <label><input type="checkbox" id="watering1" name="wateringNeeds" value="None"> None</label><br>
+                        <label><input type="checkbox" id="watering2" name="wateringNeeds" value="Low"> Low</label><br> 
+                        <label><input type="checkbox" id="watering3" name="wateringNeeds" value="Moderate"> Moderate</label><br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Plant Type</h5>
+                        <label><input type="checkbox" id="type1" name="plantType" value="Annual"> Annual</label><br>
+                        <label><input type="checkbox" id="type2" name="plantType" value="Grass"> Grass</label><br>
+                        <label><input type="checkbox" id="type3" name="plantType" value="Perennial"> Perennial</label><br> 
+                        <label><input type="checkbox" id="type4" name="plantType" value="Shrub (Evergreen)"> Shrub (Evergreen)</label><br> 
+                        <label><input type="checkbox" id="type5" name="plantType" value="Shrub (Deciduous)"> Shrub (Deciduous)</label><br> 
+                        <label><input type="checkbox" id="type6" name="plantType" value="Tree (Evergreen)"> Tree (Evergreen)</label><br> 
+                        <label><input type="checkbox" id="type7" name="plantType" value="Tree (Deciduous)"> Tree (Deciduous)</label><br>
+                        <label><input type="checkbox" id="type8" name="plantType" value="Vine"> Vine</label><br> 
+                        <label><input type="checkbox" id="type9" name="plantType" value="Fern"> Fern</label><br>
+                        <label><input type="checkbox" id="type10" name="plantType" value="Succulent"> Succulent</label><br>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+                <button id="filter" type="button" class="btn btn-primary">Filter</button>
+                <button id="clear" type="button" class="btn btn-secondary">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src=" https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+    
+    <script src="script/script.js"></script>
+  </body>
+</html>
