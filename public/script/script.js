@@ -64,28 +64,12 @@ $(function(){
         
         //Fetching the BloomTime checbox selections and creating a query string
         var Bloomtime = "";
-        if($("#bloom1").is(":checked") || $("#bloom2").is(":checked") || $("#bloom3").is(":checked") || $("#bloom4").is(":checked")){
-           
-            if($("#bloom1").is(":checked")){
-                Bloomtime += "bloom_time like '%25"+ $("#bloom1").val()+ "%25'";
-            }
-            if($("#bloom2").is(":checked") ){
+        for(var i=1; i<=4; i++){
+            if($("#bloom"+i).is(":checked") ){
                 if (Bloomtime!="") {
-					Bloomtime +=" or ";
-				}
-                Bloomtime +="bloom_time like '%25"+ $("#bloom2").val()+ "%25'";
-            }
-            if($("#bloom3").is(":checked")){
-                if (Bloomtime!="") {
-					Bloomtime +=" or ";
-				}
-                Bloomtime += "bloom_time like '%25"+ $("#bloom3").val()+ "%25'";
-            }
-            if($("#bloom4").is(":checked")){
-                if (Bloomtime!="") {
-					Bloomtime +=" or ";
-				}
-                Bloomtime += "bloom_time like '%25"+ $("#bloom4").val()+ "%25'";
+                    Bloomtime +=" or ";
+                }
+                Bloomtime +="bloom_time like '%25"+ $("#bloom"+i).val()+ "%25'";
             }
         }
         
@@ -98,35 +82,13 @@ $(function(){
         
         //Fetching the SizeAtMaturity checbox selections and creating a query string
         var SizeAtMaturity = "";
-        if($("#size1").is(":checked") || $("#size2").is(":checked") || $("#size3").is(":checked") || $("#size4").is(":checked") || $("#size5").is(":checked")){
-            
-            if($("#size1").is(":checked")){
-                SizeAtMaturity += "size_at_maturity like '"+ $("#size1").val()+ "'";
-            }
-            if($("#size2").is(":checked") ){
-                if (SizeAtMaturity!="") {
-					SizeAtMaturity +=" or ";
-				}
-                SizeAtMaturity +="size_at_maturity like '"+ $("#size2").val()+ "'";
-            }
-            if($("#size3").is(":checked")){
-                if (SizeAtMaturity!="") {
-					SizeAtMaturity +=" or ";
-				}
-                SizeAtMaturity += "size_at_maturity like '"+ $("#size3").val()+ "'";
-            }
-            if($("#size4").is(":checked")){
-                if (SizeAtMaturity!="") {
-					SizeAtMaturity +=" or ";
-				}
-                SizeAtMaturity += "size_at_maturity like '"+ $("#size4").val()+ "'";
-            }
-            if($("#size5").is(":checked")){
-                if (SizeAtMaturity!="") {
-					SizeAtMaturity +=" or ";
-				}
-                SizeAtMaturity += "size_at_maturity like '"+ $("#size5").val()+ "'";
-            }
+        for(var j=1; j<=5; j++){
+            if($("#size"+j).is(":checked") ){
+                    if (SizeAtMaturity!="") {
+                        SizeAtMaturity +=" or ";
+                    }
+                    SizeAtMaturity += "size_at_maturity like '"+ $("#size"+j).val()+ "'";
+                }
         }
         
         if((SizeAtMaturity != "") && (finalQuery != "")){
@@ -138,23 +100,13 @@ $(function(){
         
         //Fetching the WateringNeeds checbox selections and creating a query string
          var WateringNeeds = "";
-        if($("#watering1").is(":checked") || $("#watering2").is(":checked") || $("#watering3").is(":checked")){
-            
-            if($("#watering1").is(":checked")){
-                WateringNeeds += "water_needs like '"+ $("#watering1").val()+ "'";
-            }
-            if($("#watering2").is(":checked") ){
-                if (WateringNeeds!="") {
-					WateringNeeds +=" or ";
-				}
-                WateringNeeds +="water_needs like '"+ $("#watering2").val()+ "'";
-            }
-            if($("#watering3").is(":checked")){
-                if (WateringNeeds!="") {
-					WateringNeeds +=" or ";
-				}
-                WateringNeeds += "water_needs like '"+ $("#watering3").val()+ "'";
-            }
+        for(var k=1; k<=3; k++){
+            if($("#watering"+k).is(":checked") ){
+                    if (WateringNeeds!="") {
+                        WateringNeeds +=" or ";
+                    }
+                    WateringNeeds += "water_needs like '"+ $("#watering"+k).val()+ "'";
+                }
         }
         
         if((WateringNeeds != "") && (finalQuery != "")){
@@ -166,66 +118,13 @@ $(function(){
         
         //Fetching the PlantType checbox selections and creating a query string
          var PlantType = "";
-        if($("#type1").is(":checked") || $("#type2").is(":checked") || $("#type3").is(":checked") || $("#type4").is(":checked") || $("#type5").is(":checked") || $("#type6").is(":checked") || $("#type7").is(":checked") || $("#type8").is(":checked") || $("#type9").is(":checked") || $("#type10").is(":checked")){
-            
-            if($("#type1").is(":checked")){
-                PlantType += "plant_type like '"+ $("#type1").val()+ "'";
-            }
-            if($("#type2").is(":checked") ){
-                if (PlantType!="") {
-					PlantType +=" or ";
-				}
-                PlantType +="plant_type like '"+ $("#type2").val()+ "'";
-            }
-            if($("#type3").is(":checked") ){
-                if (PlantType!="") {
-					PlantType +=" or ";
-				}
-                PlantType +="plant_type like '"+ $("#type3").val()+ "'";
-            }
-            if($("#type4").is(":checked") ){
-                if (PlantType!="") {
-					PlantType +=" or ";
-				}
-                PlantType +="plant_type like '"+ $("#type4").val()+ "'";
-            }
-            if($("#type5").is(":checked") ){
-                if (PlantType!="") {
-					PlantType +=" or ";
-				}
-                PlantType +="plant_type like '"+ $("#type5").val()+ "'";
-            }
-            if($("#type6").is(":checked") ){
-                if (PlantType!="") {
-					PlantType +=" or ";
-				}
-                PlantType +="plant_type like '"+ $("#type6").val()+ "'";
-            }
-            if($("#type7").is(":checked") ){
-                if (PlantType!="") {
-					PlantType +=" or ";
-				}
-                PlantType +="plant_type like '"+ $("#type7").val()+ "'";
-            }
-            if($("#type8").is(":checked") ){
-                if (PlantType!="") {
-					PlantType +=" or ";
-				}
-                PlantType +="plant_type like '"+ $("#type8").val()+ "'";
-            }
-            if($("#type9").is(":checked") ){
-                if (PlantType!="") {
-					PlantType +=" or ";
-				}
-                PlantType +="plant_type like '"+ $("#type9").val()+ "'";
-            }
-            if($("#type10").is(":checked") ){
-                if (PlantType!="") {
-					PlantType +=" or ";
-				}
-                PlantType +="plant_type like '"+ $("#type10").val()+ "'";
-            }
-            
+         for(var l=1; l<=10; l++){
+            if($("#type"+l).is(":checked") ){
+                    if (PlantType!="") {
+                        PlantType +=" or ";
+                    }
+                    PlantType += "plant_type like '"+ $("#type"+l).val()+ "'";
+                }
         }
         
         if((PlantType != "") && (finalQuery != "")){
